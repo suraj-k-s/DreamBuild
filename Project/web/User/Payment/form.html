@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="payment.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <title>Document</title>
+</head>
+<body>
+<section class="section">
+
+    <div class="form-container">
+            <div class="form-progress">
+                    <progress class="form-progress-bar" min="0" max="100" value="0" step="33" aria-labelledby="form-progress-completion"></progress>
+                            
+                    <div class="form-progress-indicator one active"></div>
+                    <div class="form-progress-indicator two"></div>
+                    <div class="form-progress-indicator three"></div>
+                    <div class="form-progress-indicator four"></div>
+                    <p id="form-progress-completion" class="js-form-progress-completion sr-only" aria-live="polite">0% complete</p>
+                </div>
+                <div class="animation-container">
+                <!-- Step one -->
+                <div class="form-step js-form-step" data-step="1">
+            
+                </div>
+                </div>
+        <form>
+          <h1 class="text-center">Material Design formular</h1>
+          <!-- <div class="form-group"> -->
+            <select class="search-select">
+                <option value="1">Select Option</option>
+                <option value="2">iOS</option>
+                <option value="3">Android</option>
+                <option value="4">iPhone</option>
+                <option value="5">Nexus</option>
+            </select>
+            <!-- <label for="select" class="control-label">Selectbox</label><i class="bar"></i>
+          </div> -->
+          <div class="form-group">
+            <input type="text" required="required"/>
+            <label for="input" class="control-label">Textfield</label><i class="bar"></i>
+          </div>
+          <div class="form-group">
+            <textarea required="required"></textarea>
+            <label for="textarea" class="control-label">Textarea</label><i class="bar"></i>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" checked="checked"/><i class="helper"></i>I'm the label from a checkbox
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"/><i class="helper"></i>I'm the label from a checkbox
+            </label>
+          </div>
+          <div class="form-radio">
+            <div class="radio">
+              <label>
+                <input type="radio" name="radio" checked="checked"/><i class="helper"></i>I'm the label from a radio button
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="radio"/><i class="helper"></i>I'm the label from a radio button
+              </label>
+            </div>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"/><i class="helper"></i>I'm the label from a checkbox
+            </label>
+          </div>
+        </form>
+        <div class="button-container">
+          <button type="button" class="button"><span>Submit</span></button>
+        </div>
+      </div>
+</section>
+
+<!-- scripts -->
+<script src="jquery-3.4.1.min.js"></script>
+<script src="progress-controller.js"></script>
+<script src="select_search.js"></script>
+</body>
+</html>
