@@ -51,7 +51,7 @@
                 <tr>
                     <td>Photo</td>
                     <td>
-                        <img src="../Assets/Landlord/<%=rs.getString("landlord_photo") %>" name="txtlogo" id="profile-image" height="120" width="120" align="center" >
+                        <img src="../Assets/Files/<%=rs.getString("landlord_photo") %>" name="txtlogo" id="profile-image" height="120" width="120" align="center" >
                         <input type="file" name="image" id="profile-image-upload" onchange="readURL(this)" style="display: none" >
                     </td>
                 </tr>

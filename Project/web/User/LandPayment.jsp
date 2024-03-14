@@ -255,43 +255,10 @@
         String up="update tbl_landbooking set landbooking_pstatus='3' where landbooking_id='"+session.getAttribute("id")+"'";
         boolean status=con.executeCommand(up);
         if (status == true) {
-                    DB.mailconnection m = new DB.mailconnection();
-                    String mailid[] = {em };
-                    String name = request.getParameter("wname");
-                    String subject = "Payment Status";
-                   
-
-                        String text = "Respected " + name + "  \r\n \r\n"
-                                + " This is from Dream Build team. \r\n\r\n"
-                                + " The Token Amount for your land has been paid. \r\n Check it out... \r\n\r\n"
-                                + " We established Dream Build in order to bring the dream about your home come true. \r\n"
-                                + " If you have any questions,and if there is anything we can improve please reply to this email. \r\n"
-                                + " we were always happy to help!. \r\n \r\n"
-                                + " Team Dream Build.";
-                        boolean b = m.sendMail(mailid, subject, text);
-                        System.out.println(b);
-                        if(b)
-                        {
-                          DB.mailconnection m1 = new DB.mailconnection();
-                    String mail[] = {request.getParameter("umail")};
-                    String name1 = request.getParameter("uname");
-                    String sub = "Payment Status";
-                   
-
-                        String txt = "Respected " + name1 + "  \r\n \r\n"
-                                + " This is from Dream Build team. \r\n\r\n"
-                                + " You have Completed the Advance payment for the Land. \r\n Please Wait for further details. \r\n\r\n"
-                                + " We established Dream Build in order to bring the dream about your home come true. \r\n"
-                                + " If you have any questions,and if there is anything we can improve please reply to this email. \r\n"
-                                + " we were always happy to help!. \r\n \r\n"
-                                + " Team Dream Build.";
-                        boolean bl = m1.sendMail(mail, sub, txt);
-                        System.out.println(b);  
-                        }
-                
+                    
              }
         //mail
         //redirect
-        //response.sendRedirect("Loader.jsp");
+        response.sendRedirect("Loader.jsp");
     }
 %>

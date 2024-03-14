@@ -68,7 +68,7 @@
                    <%=r.getString("work_caption")%>
                 </td>
                 <td>
-                    <img src="../Assets/WorkGallery/<%=r.getString("wgallery_image")%>" width="75" height="75">
+                    <img src="../Assets/Files/<%=r.getString("wgallery_image")%>" width="75" height="75">
                 </td>
                 <td>
                     <a href="WorkGallery.jsp?did=<%=r.getString("wgallery_id")%>">Delete</a>

@@ -24,7 +24,7 @@
             
                 
                 
-            String insQry = "insert into tbl_complaint(complaint_title,complaint_description,complaint_date,landlord_id)values('"+title+"','"+Complaint+"',curdate(),'"+session.getAttribute("landlordid")+"')";
+            String insQry = "insert into tbl_complaints(complaint_title,complaint_description,complaint_date,landlord_id)values('"+title+"','"+Complaint+"',curdate(),'"+session.getAttribute("landlordid")+"')";
             if(connect.executeCommand(insQry))
             {
                 out.println("<script>alert('Inserted')</script>");
@@ -36,7 +36,7 @@
             }
         }
         if(request.getParameter("did")!=null){
-            String del="delete from tbl_complaint where complaint_id='"+request.getParameter("did")+"'";
+            String del="delete from tbl_complaints where complaint_id='"+request.getParameter("did")+"'";
             connect.executeCommand(del);
             response.sendRedirect("Complaints.jsp");
         }
@@ -80,7 +80,7 @@
                 <th>Action</th>
             </tr>
             <%
-                    String s = "select * from tbl_complaint where landlord_id='"+session.getAttribute("landlordid")+"'";
+                    String s = "select * from tbl_complaints where landlord_id='"+session.getAttribute("landlordid")+"'";
                     ResultSet r = connect.selectCommand(s);
                     int i = 0;
                     while (r.next()) {

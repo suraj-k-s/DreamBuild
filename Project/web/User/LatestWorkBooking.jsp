@@ -35,7 +35,7 @@
                     %>
                     <td>
                             <p style="text-align:center;border:1px solid #999;margin:22px;padding:10px">
-                                <img src="../Assets/LatestWork/<%=rs.getString("lwork_image")%>" width="100" height="100"><br>
+                                <img src="../Assets/Files/<%=rs.getString("lwork_image")%>" width="100" height="100"><br>
                                     <%=rs.getString("lwork_caption")%>
                                     <br>
                                     Details:<%=rs.getString("lwork_details")%>
@@ -92,42 +92,7 @@
                         //out.println(worker_name);
                     }
                         
-                if(status==true)
-                     {
-                    DB.mailconnection m = new DB.mailconnection();
-                    
-                    String mailid[] = {user_email };
-                    String name = user_name;
-                    String subject = "Booking Status";
-                   
-
-                        String text = "Respected " + name + "  \r\n \r\n"
-                                + " This is from Dream Build team. \r\n"
-                                + " We established Dream Build in order to bring the dream about your home come true. \r\n\r\n"
-                                + " Your requset have been successfully submitted. \r\n"
-                                + " Please wait for further updates. \r\n"
-                                + " we were always happy to help!. \r\n \r\n"
-                                + " Team Dream Build.";
-                        boolean b = m.sendMail(mailid, subject, text);
-                        System.out.println(b);
-                     }
-                if(status==true)
-                     {
-                    DB.mailconnection m = new DB.mailconnection();
-                    String mailid[] = {worker_email};
-                    String name = worker_name;
-                    String subject = "New Booking";
-                   
-
-                        String text = "Respected " + name + "  \r\n \r\n"
-                                + " This is from Dream Build team. \r\n"
-                                + " We established Dream Build in order to bring the dream about your home come true. \r\n\r\n"
-                                + " You got one new Booking. \r\n"
-                                + " Check it out. \r\n \r\n"
-                                + " Team Dream Build.";
-                        boolean b = m.sendMail(mailid, subject, text);
-                        System.out.println(b);
-                     }
+                
                 %>
                 <script type="text/javascript">
             alert("Work Booking Successfull..");

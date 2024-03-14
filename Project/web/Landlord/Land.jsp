@@ -107,7 +107,7 @@
                     <%=rs.getString("location_name")%>
                 </td>
                 <td>
-                    <img src="../Assets/Land/<%=rs.getString("land_image")%>" width="75" height="75">
+                    <img src="../Assets/Files/<%=rs.getString("land_image")%>" width="75" height="75">
                 </td>
                 
                 <td>

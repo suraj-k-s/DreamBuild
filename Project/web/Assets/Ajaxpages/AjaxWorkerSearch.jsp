@@ -109,7 +109,7 @@ a{
         i++;
       %>
         <td class="zoom"><p style="text-align:center;border:1px solid #999;margin:22px;padding:10px">
-                <img src="../Assets/Worker/<%=rs.getString("worker_photo")%>" width="100" height="100"><br>
+                <img src="../Assets/Files/<%=rs.getString("worker_photo")%>" width="100" height="100"><br>
            Name: <%=rs.getString("worker_name") %><br>
            Contact: <%=rs.getString("worker_contact") %><br>
              Rating:<%=average_rating%>

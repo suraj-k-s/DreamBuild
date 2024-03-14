@@ -43,7 +43,7 @@
             %>
             <tr>
                 <td><%=i%></td>
-                <td><img src="../Assets/Land/<%=r.getString("land_image")%>" width="100" height="100"></td>
+                <td><img src="../Assets/Files/<%=r.getString("land_image")%>" width="100" height="100"></td>
                 <td>
                     <%=r.getString("land_tokenamount")%>
                 </td>

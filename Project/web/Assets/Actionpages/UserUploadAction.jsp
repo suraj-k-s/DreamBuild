@@ -93,7 +93,7 @@ if(isMultipart)
          String ext=file_name.substring(file_name.lastIndexOf("."));
             //setting path to store image
             File proj_path=new File(config.getServletContext().getRealPath("/"));
-            String file_path=proj_path.getParentFile().getParentFile().getPath()+"\\web\\Assets\\User\\";
+            String file_path=proj_path.getParentFile().getParentFile().getPath()+"\\web\\Assets\\Files\\";
             Random r=new Random();
              int r_num=r.nextInt(1111)+999;
              
@@ -167,20 +167,7 @@ if(isMultipart)
     
     if(status==true)
     {
-        DB.mailconnection m = new DB.mailconnection();
-                    String mailid[] = {value[3]};
-                    String name = value[0];
-                    String subject = "Registartion SucessFull";
-                   
-
-                        String text = "Respected " + name + "  \r\n \r\n"
-                                + " This is from Dream Build team,thank you for signing up to our service. \r\n"
-                                + " We established Dream Build in order to bring the dream about your home come true. \r\n"
-                                + " If you have any questions,and if there is anything we can improve please reply to this email. \r\n"
-                                + " we were always happy to help!. \r\n \r\n"
-                                + " Team Dream Build.";
-                        boolean b = m.sendMail(mailid, subject, text);
-                        System.out.println(b);
+        
       %> 
       <script type="text/javascript">
             alert("Upload Successfully..");

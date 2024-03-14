@@ -67,7 +67,7 @@
                         <img src="../Template/Admin/img/menu-icon/1.svg" alt="">
                         <span>Dashboard</span>
                     </a>
-                   
+
                 </li>
                 <li class="side_menu_title">
                     <span>Applications</span>
@@ -78,24 +78,31 @@
                         <span>Basic Data</span>
                     </a>
                     <ul>
-                       <li><a href="District.jsp">District</a></li>
+                        <li><a href="District.jsp">District</a></li>
                         <li><a href="Place.jsp">Place</a></li>
                         <li><a href="Location.jsp">Location</a></li>
-                        <li><a href="ProductType.jsp">Product Type</a></li>
                         <li><a href="ServiceType.jsp">Service Type</a></li>
                         <li><a href="WorkerType.jsp">Worker Type</a></li>
-                        <li><a href="Product.jsp">Product</a></li>
                     </ul>
                 </li>
                 <li class="">
-                    <a   class="has-arrow" href="#" aria-expanded="false">
+                    <a  class="has-arrow" href="#" aria-expanded="false">
                         <img src="../Template/Admin/img/menu-icon/2.svg" alt="">
                         <span>Verification</span>
                     </a>
                     <ul>
                         <li><a href="Landlordlist.jsp">Landlord</a></li>
-                        <li><a href="Shoplist.jsp">Shop</a></li>
                         <li><a href="Workerlist.jsp">Worker</a></li>
+                    </ul>
+                </li>
+                <li class="">
+                    <a  class="has-arrow" href="#" aria-expanded="false">
+                        <img src="../Template/Admin/img/menu-icon/2.svg" alt="">
+                        <span>Others</span>
+                    </a>
+                    <ul>
+                        <li><a href="ViewComplaints.jsp">Complaint</a></li>
+                        <li><a href="ViewFeedback.jsp">Feedback</a></li>
                     </ul>
                 </li>
                 <li class="">
@@ -105,7 +112,7 @@
                     </a>
                     <ul>
                         <li><a href="../Login/Login.jsp">LogOut</a></li>
-                        
+
                     </ul>
                 </li>
             </ul>

@@ -76,7 +76,7 @@
                         %>
                         <tr>
                             <td><%=i%></td>
-                            <td><img src="../Assets/Land/<%=rs.getString("land_image")%>" width="100" height="100"></td>
+                            <td><img src="../Assets/Files/<%=rs.getString("land_image")%>" width="100" height="100"></td>
                             <td><%=rs.getString("land_tokenamount")%></td>
                              <td><%=rs.getString("user_name")%></td>
                               <td><%=rs.getString("user_contact")%></td>
@@ -121,7 +121,7 @@
                         %>
                         <tr>
                             <td><%=i%></td>
-                            <td><img src="../Assets/Land/<%=rs.getString("land_image")%>" width="100" height="100"></td>
+                            <td><img src="../Assets/Files/<%=rs.getString("land_image")%>" width="100" height="100"></td>
                             <td><%=rs.getString("land_tokenamount")%></td>
                              <td><%=rs.getString("user_name")%></td>
                               <td><%=rs.getString("user_contact")%></td>
@@ -167,7 +167,7 @@
                         %>
                         <tr>
                             <td><%=i%></td>
-                            <td><img src="../Assets/Land/<%=rs.getString("land_image")%>" width="100" height="100"></td>
+                            <td><img src="../Assets/Files/<%=rs.getString("land_image")%>" width="100" height="100"></td>
                             <td><%=rs.getString("land_tokenamount")%></td>
                              <td><%=rs.getString("user_name")%></td>
                               <td><%=rs.getString("user_contact")%></td>

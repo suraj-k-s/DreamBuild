@@ -66,7 +66,7 @@
             <tr>
                 <td><%=i%></td>
                 <td>
-                    <img src="../Assets/Work/<%=r.getString("work_image")%>" width="75" height="75">
+                    <img src="../Assets/Files/<%=r.getString("work_image")%>" width="75" height="75">
                 </td>
                 <td>
                     <%=r.getString("work_caption")%>

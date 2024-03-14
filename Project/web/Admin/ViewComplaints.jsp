@@ -20,7 +20,7 @@
     <body>
         <br><br><br><br><br><br>
         <div id="tab">
-        <h1 align="center">User Complaints</h1>
+        <h1 align="center"> user Complaints</h1>
         <table border="1" align="center" cellpadding="10">
                             
              <tr>
@@ -34,7 +34,7 @@
         
             <%
                 int i = 0;
-                String selQry1 = "select * from tbl_complaint c inner join tbl_user u on c.user_id=u.user_id";
+                String selQry1 = "select * from tbl_complaints c inner join tbl_user u on c.user_id=u.user_id";
                // out.println(selQry1);
                 ResultSet rsc = connect.selectCommand(selQry1);
                 while(rsc.next())
@@ -43,9 +43,9 @@
                     %>
                     <tr>
                         <td><%=i%></td>
-                        <td><%=rsc.getString("complaint_title")%></td>
-                        <td><%=rsc.getString("complaint_description")%></td>
-                        <td> <a href="Reply.jsp?did=<%=rsc.getString("complaint_id")%>">Reply</a>
+                        <td><%=rsc.getString("complaints_title")%></td>
+                        <td><%=rsc.getString("complaints_description")%></td>
+                        <td> <a href="Reply.jsp?did=<%=rsc.getString("complaints_id")%>">Reply</a>
                     </tr>
       
               <%
@@ -65,7 +65,7 @@
         
             <%
                 int j = 0;
-                String selQry = "select * from tbl_complaint c inner join tbl_worker w on c.worker_id=w.worker_id";
+                String selQry = "select * from tbl_complaints c inner join tbl_worker w on c.worker_id=w.worker_id";
                // out.println(selQry1);
                 ResultSet rs = connect.selectCommand(selQry);
                 while(rs.next())
@@ -74,9 +74,9 @@
                     %>
                     <tr>
                         <td><%=j%></td>
-                        <td><%=rs.getString("complaint_title")%></td>
-                        <td><%=rs.getString("complaint_description")%></td>
-                        <td> <a href="Reply.jsp?did=<%=rs.getString("complaint_id")%>">Reply</a></td>
+                        <td><%=rs.getString("complaints_title")%></td>
+                        <td><%=rs.getString("complaints_description")%></td>
+                        <td> <a href="Reply.jsp?did=<%=rs.getString("complaints_id")%>">Reply</a></td>
                     </tr> 
               <%
                 }
@@ -97,7 +97,7 @@
         
             <%
                 int k = 0;
-                String selQry2 = "select * from tbl_complaint c inner join tbl_landlord l on c.landlord_id=l.landlord_id";
+                String selQry2 = "select * from tbl_complaints c inner join tbl_landlord l on c.landlord_id=l.landlord_id";
                // out.println(selQry1);
                 ResultSet rsc1 = connect.selectCommand(selQry2);
                 while(rsc1.next())
@@ -115,39 +115,8 @@
                 }
                   %>
                     </table>  
-                  <br><br>
-                  <h1 align="center">Shop Complaints</h1>
-        <table border="1" align="center" cellpadding="10">
-                            
-             <tr>
-                <th>SI.No</th>
-                <th>Complaint Title</th>
-                <th>Content</th>
-                <th>Action</th>
-            </tr>
-            
-           <br><br>
+                  
         
-            <%
-                int l = 0;
-                String selQry3 = "select * from tbl_complaint c inner join tbl_shop s on c.shop_id=s.shop_id";
-               // out.println(selQry1);
-                ResultSet rsc2 = connect.selectCommand(selQry3);
-                while(rsc2.next())
-                {
-                    l++;
-                    %>
-                    <tr>
-                        <td><%=l%></td>
-                        <td><%=rsc2.getString("complaint_title")%></td>
-                        <td><%=rsc2.getString("complaint_description")%></td>
-                        <td> <a href="Reply.jsp?did=<%=rsc2.getString("complaint_id")%>">Reply</a>
-                    </tr>
-      
-              <%
-                }
-                  %>
-                    </table> 
         </div>
     </body>
     <%@include file="Footer.jsp" %>

@@ -27,10 +27,7 @@
                 
                 String selAdmin="select * from tbl_admin where admin_username='"+request.getParameter("txtuname")+"' and admin_password='"+request.getParameter("txtpwd")+"' ";
                 ResultSet rsAdmin=con.selectCommand(selAdmin);
-                
-                String sels="select * from tbl_shop where shop_email='"+request.getParameter("txtuname")+"' and shop_password='"+request.getParameter("txtpwd")+"' and shop_vstatus='1'";
-                ResultSet ress=con.selectCommand(sels);
-                
+               
                 if(rs.next())
                 {
                     session.setAttribute("userid",rs.getString("user_id"));
@@ -49,12 +46,7 @@
                     session.setAttribute("landlordname", res.getString("landlord_name"));
                     response.sendRedirect("../Landlord/Homepage.jsp");
                 }
-                else if(ress.next())
-                {
-                    session.setAttribute("shopid",ress.getString("shop_id"));
-                    session.setAttribute("shopname", ress.getString("shop_name"));
-                    response.sendRedirect("../Shop/Homepage.jsp");
-                }
+               
                  else if(rsAdmin.next())
                 {
                     session.setAttribute("adminid",rsAdmin.getString("admin_id"));

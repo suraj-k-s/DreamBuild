@@ -53,7 +53,7 @@
             %>
             <tr>
                 <td><%=i%></td>
-                <td><img src="../Assets/LatestWork/<%=r.getString("lwork_image")%>" width="100" height="100"></td>
+                <td><img src="../Assets/Files/<%=r.getString("lwork_image")%>" width="100" height="100"></td>
        
                 <td>
                     <%=r.getString("booking_date")%>

@@ -38,7 +38,7 @@
             %>
             <tr>
                 <td><%=i%></td>
-                <td><img src="../Assets/Land/<%=r.getString("land_image")%>" width="100" height="100"></td>
+                <td><img src="../Assets/Files/<%=r.getString("land_image")%>" width="100" height="100"></td>
        
                 <td>
                     <%=r.getString("booking_date")%>
@@ -60,7 +60,7 @@
                    {
                    out.println("Agreement Started"); %>
                      
-                   | <a href="ViewAcceptedLandBookings.jsp?cid=<%=r.getString("land_id")%> &uname=<%=r.getString("user_name")%> &umail=<%=r.getString("user_email")%>">Completed</a> 
+                   | <a href="ViewAcceptedLandBookings.jsp?cid=<%=r.getString("land_id")%>&uname=<%=r.getString("user_name")%>&umail=<%=r.getString("user_email")%>">Completed</a> 
                     <% } %>
                 </td>
             </tr>
@@ -76,24 +76,10 @@
 <%
             if(request.getParameter("cid")!=null)
             {
-                String up="update tbl_land set land_status='1' where land_id='"+request.getParameter("cid")+"'";
+                String up="update tbl_land set land_status='3' where land_id='"+request.getParameter("cid")+"'";
                 boolean status=con.executeCommand(up);
         if (status == true) {
-                    DB.mailconnection m = new DB.mailconnection();
-                    String mailid[] = {request.getParameter("umail") };
-                    String name = request.getParameter("uname");
-                    String subject = "Property Status";
                    
-
-                        String text = "Respected " + name + "  \r\n \r\n"
-                                + " This is from Dream Build team. \r\n\r\n"
-                                + " The property for which you have been paid and under processing, Now completed the agreement Process and ready to handover. \r\n Check it out... \r\n\r\n"
-                                + " We established Dream Build in order to bring the dream about your home come true. \r\n"
-                                + " If you have any questions,and if there is anything we can improve please reply to this email. \r\n"
-                                + " we were always happy to help!. \r\n \r\n"
-                                + " Team Dream Build.";
-                        boolean b = m.sendMail(mailid, subject, text);
-                        System.out.println(b);
                 response.sendRedirect("ViewAcceptedLandBookings.jsp");
             } 
             }

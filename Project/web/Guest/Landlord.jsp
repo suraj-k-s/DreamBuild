@@ -131,7 +131,7 @@ function nameval(elem)
                         <div class="col-md-6">
                             <div class="contact-info">
 us
-                                <img src="../Template/Main/usd.jpg" style="margin-left:80px;margin-top:250px" width="300" height="250"/>
+<img src="../Template/Main/user.png" style="margin-left:80px;margin-top:250px" width="300" height="250"/>
 
                             </div>
                         </div>

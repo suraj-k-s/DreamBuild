@@ -99,7 +99,6 @@
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Sign Up</a>
                                     <div class="dropdown-menu">
                                         <a href="Landlord.jsp" class="dropdown-item">Landlord</a>
-                                        <a href="Shop.jsp" class="dropdown-item">Shop</a>
                                         <a href="User.jsp" class="dropdown-item">User</a>
                                         <a href="Worker.jsp" class="dropdown-item">Worker</a>
                                     </div>

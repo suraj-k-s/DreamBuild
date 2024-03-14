@@ -74,14 +74,14 @@
                         k++;
                     } else {
 
-           //f_item=(FileItem)itr.next();
+                        //f_item=(FileItem)itr.next();
                         file_name = f_item.getName();
                         field_name = f_item.getFieldName();
                         if (field_name.equals("image")) {
                             String ext = file_name.substring(file_name.lastIndexOf("."));
                             //setting path to store image
                             File proj_path = new File(config.getServletContext().getRealPath("/"));
-                            String file_path = proj_path.getParentFile().getParentFile().getPath() + "\\web\\Assets\\Worker\\";
+                            String file_path = proj_path.getParentFile().getParentFile().getPath() + "\\web\\Assets\\Files\\";
                             Random r = new Random();
                             int r_num = r.nextInt(1111) + 999;
 
@@ -101,7 +101,7 @@
                             String ext = file_name.substring(file_name.lastIndexOf("."));
                             //setting path to store image
                             File proj_path = new File(config.getServletContext().getRealPath("/"));
-                            String file_path = proj_path.getParentFile().getParentFile().getPath() + "\\web\\Assets\\Worker\\";
+                            String file_path = proj_path.getParentFile().getParentFile().getPath() + "\\web\\Assets\\Files\\";
                             Random r = new Random();
                             int r_num = r.nextInt(1111) + 999;
 
@@ -120,7 +120,7 @@
                     }
 
                 }
-    //Strinh str1="insert into tbl_wantedlist ()";
+                //Strinh str1="insert into tbl_wantedlist ()";
                 //if((request.getParameter("txtpwd")).equals(request.getParameter("txtpwd1")))
                 String s = "select * from tbl_worker where worker_email='" + value[4] + "'";
                 ResultSet r = con.selectCommand(s);
@@ -163,20 +163,6 @@
                 boolean status = con.executeCommand(str1);
 
                 if (status == true) {
-                    DB.mailconnection m = new DB.mailconnection();
-                    String mailid[] = {value[4]};
-                    String name = value[0];
-                    String subject = "Registartion SucessFull and Under Veification";
-                   
-
-                        String text = "Respected " + name + "  \r\n \r\n"
-                                + " This is from Dream Build team,thank you for signing up to our service. \r\n"
-                                + " We established Dream Build in order to bring the dream about your home come true. \r\n"
-                                + " If you have any questions,and if there is anything we can improve please reply to this email. \r\n"
-                                + " we were always happy to help!. \r\n \r\n"
-                                + " Team Dream Build.";
-                        boolean b = m.sendMail(mailid, subject, text);
-                        System.out.println(b);
 
         %> 
         <script type="text/javascript">
@@ -185,8 +171,7 @@
                 window.location.href = '../../Guest/Worker.jsp'
             }, 100);
         </script>
-        <%             
-            }
+        <%            }
         } else {
         %>
         <script type="text/javascript">

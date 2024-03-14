@@ -74,7 +74,7 @@ a{
     {
         i++;
       %>
-        <td class="zoom"><p style="text-align:center;border:1px solid #999;margin:22px;padding:10px"><img src="../Assets/Land/<%=rs.getString("land_image")%>" width="100" height="100"><br>
+        <td class="zoom"><p style="text-align:center;border:1px solid #999;margin:22px;padding:10px"><img src="../Assets/Files/<%=rs.getString("land_image")%>" width="100" height="100"><br>
                                     Token Amount:<%=rs.getString("land_tokenamount")%><br>
                                     Owner:<%=rs.getString("landlord_name")%><br>
                                     Contact:<%=rs.getString("landlord_contact")%><br>

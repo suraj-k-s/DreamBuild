@@ -33,15 +33,7 @@
     rlr.next();
     rlord=rlr.getString("lid");
     
-    String sshop="select count(shop_id) as sid from tbl_shop where shop_vstatus='1'";
-    ResultSet rsh=con.selectCommand(sshop);
-    rsh.next();
-    ashop=rsh.getString("sid");
-    
-    String ssh="select count(shop_id) as sid from tbl_shop where shop_vstatus='2'";
-    ResultSet rh=con.selectCommand(ssh);
-    rh.next();
-    rshop=rh.getString("sid");
+   
 %>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -125,10 +117,8 @@
                         <li><a href="District.jsp">District</a></li>
                         <li><a href="Place.jsp">Place</a></li>
                         <li><a href="Location.jsp">Location</a></li>
-                        <li><a href="ProductType.jsp">Product Type</a></li>
                         <li><a href="ServiceType.jsp">Service Type</a></li>
                         <li><a href="WorkerType.jsp">Worker Type</a></li>
-                        <li><a href="Product.jsp">Product</a></li>
                     </ul>
                 </li>
                 <li class="">
@@ -138,8 +128,17 @@
                     </a>
                     <ul>
                         <li><a href="Landlordlist.jsp">Landlord</a></li>
-                        <li><a href="Shoplist.jsp">Shop</a></li>
                         <li><a href="Workerlist.jsp">Worker</a></li>
+                    </ul>
+                </li>
+                 <li class="">
+                    <a  class="has-arrow" href="#" aria-expanded="false">
+                        <img src="../Template/Admin/img/menu-icon/2.svg" alt="">
+                        <span>Others</span>
+                    </a>
+                    <ul>
+                        <li><a href="ViewComplaints.jsp">Complaint</a></li>
+                        <li><a href="ViewFeedback.jsp">Feedback</a></li>
                     </ul>
                 </li>
                 <li class="">
@@ -217,24 +216,6 @@
                                                         <p>Rejected Landlords</p>
                                                     </div>
                                                 </div>
-                                                <div class="single_quick_activity d-flex">
-                                                    <div class="icon">
-                                                        <img src="img/icon/Student.png" alt="">
-                                                    </div>
-                                                    <div class="count_content">
-                                                        <h3><span class="counter"><%=ashop%></span> </h3>
-                                                        <p>Accepted Shops</p>
-                                                    </div>
-                                                </div>
-                                                <div class="single_quick_activity d-flex">
-                                                    <div class="icon">
-                                                        <img src="img/icon/Student.png" alt="">
-                                                    </div>
-                                                    <div class="count_content">
-                                                        <h3><span class="counter"><%=rshop%></span> </h3>
-                                                        <p>Rejected Shops</p>
-                                                    </div>
-                                                </div>        
                                             </div>
                                         </div>
                                     </div>
@@ -260,7 +241,7 @@
                                     <!-- single carousel  -->
                                     <div class="single_staf">
                                         <div class="staf_thumb">
-                                            <img src="../Assets/Worker/<%=w.getString("worker_photo")%>" alt="">
+                                            <img src="../Assets/Files/<%=w.getString("worker_photo")%>" alt="">
                                         </div>
                                         <h4><%=w.getString("worker_name")%></h4>
                                         <p><%=w.getString("worker_contact")%></p>
@@ -286,7 +267,7 @@
                                     <!-- single carousel  -->
                                     <div class="single_staf">
                                         <div class="staf_thumb">
-                                            <img src="../Assets/Landlord/<%=wdd.getString("landlord_photo")%>" alt="">
+                                            <img src="../Assets/Files/<%=wdd.getString("landlord_photo")%>" alt="">
                                         </div>
                                         <h4><%=wdd.getString("landlord_name")%></h4>
                                         <p><%=wdd.getString("landlord_contact")%></p>
@@ -294,34 +275,7 @@
                                     </div>
                                    
                                      <%}%>
-                                     
-                                </div>  
-                                       <div class="box_header border_bottom_1px  ">
-                                    <div class="main-title">
-                                        <h3 class="mb_25">Shops</h3>
-                                    </div>
-                                </div>
                                
-                                <div class="staf_list_wrapper sraf_active owl-carousel">
-                                     <%
-                                String ll="select * from tbl_shop where shop_vstatus='1'";
-                                ResultSet lal=con.selectCommand(ll);
-                                while(lal.next())
-                                {
-                                %>
-                                    <!-- single carousel  -->
-                                    <div class="single_staf">
-                                        <div class="staf_thumb">
-                                            <img src="../Assets/Shop/<%=lal.getString("shop_logo")%>" alt="">
-                                        </div>
-                                        <h4><%=lal.getString("shop_name")%></h4>
-                                        <p><%=lal.getString("shop_contact")%></p>
-                                        
-                                    </div>
-                                   
-                                     <%}%>
-                                     
-                                </div>
                             </div>
                         </div>
                     </div>

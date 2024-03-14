@@ -107,14 +107,11 @@
                                 </div>
                                 <a href="SearchWorker.jsp" class="nav-item nav-link">Search Worker</a>
                                 <a href="SearchLand.jsp" class="nav-item nav-link">Search Land</a>
-                                <a href="SearchShop.jsp" class="nav-item nav-link">Search Shop</a>
-                                <a href="mycart.jsp" class="nav-item nav-link">My Cart</a>
                                 <a href="" class="nav-item nav-link"> </a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Booking Details</a>
                                     <div class="dropdown-menu">
                                         <a href="ViewLandBookings.jsp" class="dropdown-item">Land Bookings</a>
-                                        <a href="ViewProductsBookings.jsp" class="dropdown-item">Product Bookings</a>
                                         <a href="ViewServiceBookings.jsp" class="dropdown-item">Service Bookings</a>
                                         <a href="ViewWorkBookings.jsp" class="dropdown-item">Work Bookings</a>
                                     </div>

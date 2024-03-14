@@ -212,9 +212,9 @@ function nameval(elem)
                           <label id="txt_label" style="color: white">Select Your Photo</label>
                           <input type="file" name="image" class="form-control"  required></div><br>
                       
-                          <div class="control-group"><input type="password" class="form-control" name="txtpwd" value="" required></div><br>
+                          <div class="control-group"><input type="password" class="form-control" name="txtpwd" placeholder="Enter Password" value="" required></div><br>
                       
-                          <div class="control-group"><input type="password" name="txtpwd1" value="" class="form-control" required onchange="chkpwd(this, txtpwd)">
+                          <div class="control-group"><input type="password" name="txtpwd1" value="" class="form-control" placeholder="Enter Confirm Password" required onchange="chkpwd(this, txtpwd)">
                    <div id="pass"></div></div><br>
                    <div align="center">
                        <input type="submit" class="btn" name="btnsave" value="SAVE">

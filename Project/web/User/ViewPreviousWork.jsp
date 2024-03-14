@@ -30,7 +30,7 @@
                 i++;
                     %>
                     <td><p style="text-align:center;border:1px solid #999;margin:22px;padding:10px">
-                                <img src="../Assets/Work/<%=rs.getString("work_image")%>" width="100" height="100"><br>
+                                <img src="../Assets/Files/<%=rs.getString("work_image")%>" width="100" height="100"><br>
                                     <%=rs.getString("work_caption")%>
                                     <br>
                                      <a href="ViewWorkGallery.jsp?gid=<%=rs.getString("work_id")%>">Work Gallery</a>

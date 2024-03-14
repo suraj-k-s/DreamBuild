@@ -250,39 +250,7 @@
         String up="update tbl_lworkbooking set lworkbooking_pstatus='1' where lworkbooking_id='"+session.getAttribute("id")+"'";
         boolean status=con.executeCommand(up);
         if (status == true) {
-                    DB.mailconnection m = new DB.mailconnection();
-                    String mailid[] = {em };
-                    String name = request.getParameter("wname");
-                    String subject = "Payment Status";
                    
-
-                        String text = "Respected " + name + "  \r\n \r\n"
-                                + " This is from Dream Build team. \r\n\r\n"
-                                + " Your payment for the work has been completed. \r\n Check it out... \r\n\r\n"
-                                + " We established Dream Build in order to bring the dream about your home come true. \r\n"
-                                + " If you have any questions,and if there is anything we can improve please reply to this email. \r\n"
-                                + " we were always happy to help!. \r\n \r\n"
-                                + " Team Dream Build.";
-                        boolean b = m.sendMail(mailid, subject, text);
-                        System.out.println(b);
-                        if(b)
-                        {
-                          DB.mailconnection m1 = new DB.mailconnection();
-                    String mail[] = {request.getParameter("umail")};
-                    String name1 = request.getParameter("uname");
-                    String sub = "Payment Status";
-                   
-
-                        String txt = "Respected " + name1 + "  \r\n \r\n"
-                                + " This is from Dream Build team. \r\n\r\n"
-                                + " You have Completed the payment for the booked work. \r\n Check it out... \r\n\r\n"
-                                + " We established Dream Build in order to bring the dream about your home come true. \r\n"
-                                + " If you have any questions,and if there is anything we can improve please reply to this email. \r\n"
-                                + " we were always happy to help!. \r\n \r\n"
-                                + " Team Dream Build.";
-                        boolean bl = m1.sendMail(mail, sub, txt);
-                        System.out.println(b);  
-                        }
                 
              }
         //mail

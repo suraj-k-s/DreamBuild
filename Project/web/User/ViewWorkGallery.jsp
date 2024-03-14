@@ -30,7 +30,7 @@
                 i++;
                     %>
                     <td><p>
-                            <img src="../Assets/WorkGallery/<%=rs.getString("wgallery_image")%>" width="100" height="100">
+                            <img src="../Assets/Files/<%=rs.getString("wgallery_image")%>" width="100" height="100">
                         </p>
                     </td>
               <%

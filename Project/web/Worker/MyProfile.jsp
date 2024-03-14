@@ -28,7 +28,7 @@
                 %>
                 <tr>
                
-                    <td colspan="2" align="center"><img width="200" height="100" src="../Assets/Worker/<%=rs.getString("worker_photo") %>"></td>
+                    <td colspan="2" align="center"><img width="200" height="100" src="../Assets/Files/<%=rs.getString("worker_photo") %>"></td>
             </tr>
             <tr>
                 <td>Name</td>

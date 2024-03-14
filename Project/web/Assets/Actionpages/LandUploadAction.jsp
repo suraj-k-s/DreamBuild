@@ -93,7 +93,7 @@ if(isMultipart)
          String ext=file_name.substring(file_name.lastIndexOf("."));
             //setting path to store image
             File proj_path=new File(config.getServletContext().getRealPath("/"));
-            String file_path=proj_path.getParentFile().getParentFile().getPath()+"\\web\\Assets\\Land\\";
+            String file_path=proj_path.getParentFile().getParentFile().getPath()+"\\web\\Assets\\Files\\";
             Random r=new Random();
              int r_num=r.nextInt(1111)+999;
              

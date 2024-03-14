@@ -31,7 +31,7 @@
                 i++;
                     %>
                     <td><p style="text-align:center;border:1px solid #999;margin:22px;padding:10px">
-                                <img src="../Assets/LatestWork/<%=rs.getString("lwork_image")%>" width="100" height="100"><br>
+                                <img src="../Assets/Files/<%=rs.getString("lwork_image")%>" width="100" height="100"><br>
                                     <%=rs.getString("lwork_caption")%>
                                     <br>
                                     Details:<%=rs.getString("lwork_details")%>

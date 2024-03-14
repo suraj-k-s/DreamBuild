@@ -23,21 +23,7 @@
                 String up="update tbl_worker set worker_vstatus='1' where worker_id='"+request.getParameter("aid")+"'";
                boolean status = con.executeCommand(up);
                if (status == true) {
-                    DB.mailconnection m = new DB.mailconnection();
-                    String mailid[] = {request.getParameter("mid")};
-                    String name = request.getParameter("nid");
-                    String subject = "Verification Successfull";
-                   
-
-                        String text = "Respected " + name + "  \r\n \r\n"
-                                + " This is from Dream Build team,thank you for signing up to our service. \r\n"
-                                + " We established Dream Build in order to bring the dream about your home come true. \r\n"
-                                + " If you have any questions,and if there is anything we can improve please reply to this email. \r\n"
-                                + " we were always happy to help!. \r\n \r\n"
-                                + " Team Dream Build.";
-                        boolean b = m.sendMail(mailid, subject, text);
-                        System.out.println(b);
-                
+                    
                 response.sendRedirect("Workerlist.jsp");
                }
              }
@@ -47,21 +33,7 @@
                 
                 boolean status = con.executeCommand(up);
                 if (status == true) {
-                    DB.mailconnection m = new DB.mailconnection();
-                    String mailid[] = {request.getParameter("mid")};
-                    String name = request.getParameter("nid");
-                    String subject = "Verification Failed";
-                   
-
-                        String text = "Respected " + name + "  \r\n \r\n"
-                                + " This is from Dream Build team,thank you for signing up to our service. \r\n"
-                                + " Sorry to inform that you failed in the verification process. \r\n\r\n"
-                                + " We established Dream Build in order to bring the dream about your home come true. \r\n"
-                                + " If you have any questions,and if there is anything we can improve please reply to this email. \r\n"
-                                + " we were always happy to help!. \r\n \r\n"
-                                + " Team Dream Build.";
-                        boolean b = m.sendMail(mailid, subject, text);
-                        System.out.println(b);
+                    
                 response.sendRedirect("Workerlist.jsp");
              }
              }
@@ -102,7 +74,7 @@
                     <%=r.getString("place_name")%>
                 </td>
                 <td>
-                    <img src="../Assets/Worker/<%=r.getString("worker_photo")%>" width="75" height="75">
+                    <img src="../Assets/Files/<%=r.getString("worker_photo")%>" width="75" height="75">
                 </td>
                 <td>
                     <%=r.getString("worker_name")%>
@@ -115,7 +87,7 @@
                 </td>
                 <td>
                     
-                    <a href="../Assets/Worker/<%=r.getString("worker_proof")%>"><%=r.getString("worker_proof")%></a>
+                    <a href="../Assets/Files/<%=r.getString("worker_proof")%>"><%=r.getString("worker_proof")%></a>
                    
                 </td>
                 <td>
@@ -159,7 +131,7 @@
                     <%=rs.getString("place_name")%>
                 </td>
                 <td>
-                    <img src="../Assets/Worker/<%=rs.getString("worker_photo")%>" width="75" height="75">
+                    <img src="../Assets/Files/<%=rs.getString("worker_photo")%>" width="75" height="75">
                 </td>
                 <td>
                     <%=rs.getString("worker_name")%>
@@ -217,7 +189,7 @@
                     <%=res.getString("place_name")%>
                 </td>
                 <td>
-                    <img src="../Assets/Worker/<%=res.getString("worker_photo")%>" width="75" height="75">
+                    <img src="../Assets/Files/<%=res.getString("worker_photo")%>" width="75" height="75">
                 </td>
                 <td>
                     <%=res.getString("worker_name")%>

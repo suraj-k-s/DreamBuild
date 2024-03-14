@@ -131,6 +131,15 @@
                         <li><a href="Shoplist.jsp">Shop</a></li>
                         <li><a href="Workerlist.jsp">Worker</a></li>
                     </ul>
+                </li> <li class="">
+                    <a  class="has-arrow" href="#" aria-expanded="false">
+                        <img src="../Template/Admin/img/menu-icon/2.svg" alt="">
+                        <span>Others</span>
+                    </a>
+                    <ul>
+                        <li><a href="ViewComplaints.jsp">Complaint</a></li>
+                        <li><a href="ViewFeedback.jsp">Feedback</a></li>
+                    </ul>
                 </li>
                 <li class="">
                     <a   class="has-arrow" href="#" aria-expanded="false">
