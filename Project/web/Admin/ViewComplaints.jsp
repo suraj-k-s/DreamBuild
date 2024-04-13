@@ -43,9 +43,9 @@
                     %>
                     <tr>
                         <td><%=i%></td>
-                        <td><%=rsc.getString("complaints_title")%></td>
-                        <td><%=rsc.getString("complaints_description")%></td>
-                        <td> <a href="Reply.jsp?did=<%=rsc.getString("complaints_id")%>">Reply</a>
+                        <td><%=rsc.getString("complaint_title")%></td>
+                        <td><%=rsc.getString("complaint_description")%></td>
+                        <td> <a href="Reply.jsp?did=<%=rsc.getString("complaint_id")%>">Reply</a>
                     </tr>
       
               <%
@@ -74,9 +74,9 @@
                     %>
                     <tr>
                         <td><%=j%></td>
-                        <td><%=rs.getString("complaints_title")%></td>
-                        <td><%=rs.getString("complaints_description")%></td>
-                        <td> <a href="Reply.jsp?did=<%=rs.getString("complaints_id")%>">Reply</a></td>
+                        <td><%=rs.getString("complaint_title")%></td>
+                        <td><%=rs.getString("complaint_description")%></td>
+                        <td> <a href="Reply.jsp?did=<%=rs.getString("complaint_id")%>">Reply</a></td>
                     </tr> 
               <%
                 }

@@ -24,7 +24,7 @@
             
                 
                 
-            String insQry = "insert into tbl_complaint(complaint_title,complaint_description,complaint_date,user_id)values('"+title+"','"+Complaint+"',curdate(),'"+session.getAttribute("userid")+"')";
+            String insQry = "insert into tbl_complaints(complaint_title,complaint_description,complaint_date,user_id)values('"+title+"','"+Complaint+"',curdate(),'"+session.getAttribute("userid")+"')";
             if(connect.executeCommand(insQry))
             {
                 out.println("<script>alert('Inserted')</script>");
@@ -79,7 +79,7 @@
                 <th>Action</th>
             </tr>
             <%
-                    String s = "select * from tbl_complaint where user_id='"+session.getAttribute("userid")+"'";
+                    String s = "select * from tbl_complaints where user_id='"+session.getAttribute("userid")+"'";
                     ResultSet r = connect.selectCommand(s);
                     int i = 0;
                     while (r.next()) {

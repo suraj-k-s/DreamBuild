@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2024 at 11:27 AM
+-- Generation Time: Apr 13, 2024 at 11:25 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -43,35 +43,6 @@ INSERT INTO `tbl_admin` (`admin_id`, `admin_username`, `admin_password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_cartbody`
---
-
-CREATE TABLE `tbl_cartbody` (
-  `cbody_id` int(10) UNSIGNED NOT NULL,
-  `cart_id` int(10) UNSIGNED DEFAULT NULL,
-  `cart_qty` int(10) UNSIGNED DEFAULT NULL,
-  `cart_status` int(10) UNSIGNED DEFAULT 0,
-  `sproduct_id` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_carthead`
---
-
-CREATE TABLE `tbl_carthead` (
-  `cart_id` int(10) UNSIGNED NOT NULL,
-  `user_id` date DEFAULT NULL,
-  `booking_status` int(10) UNSIGNED DEFAULT 0,
-  `payment_status` int(10) UNSIGNED DEFAULT 0,
-  `grand_total` int(10) UNSIGNED DEFAULT NULL,
-  `booking_date` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_complaints`
 --
 
@@ -92,7 +63,13 @@ CREATE TABLE `tbl_complaints` (
 --
 
 INSERT INTO `tbl_complaints` (`complaint_id`, `complaint_title`, `complaint_description`, `complaint_date`, `complaint_status`, `complaint_reply`, `user_id`, `worker_id`, `landlord_id`) VALUES
-(3, 'freeland', 'no water', '2024-03-13', 0, NULL, NULL, NULL, 1);
+(4, 'freeland', 'no water', '2024-03-19', 0, NULL, NULL, NULL, 1),
+(5, 'house', 'no money', '2024-03-19', 0, NULL, NULL, 1, NULL),
+(6, 'bad', 'bad', '2024-04-13', 0, NULL, 2, NULL, NULL),
+(7, 'carpenter', 'very bad ', '2024-04-13', 0, NULL, NULL, 9, NULL),
+(8, 'enginner', 'your work is so bad', '2024-04-13', 0, NULL, NULL, 1, NULL),
+(9, 'bad', 'bad', '2024-04-13', 0, NULL, 2, NULL, NULL),
+(10, 'land', 'good', '2024-04-13', 0, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -138,7 +115,12 @@ CREATE TABLE `tbl_feedback` (
 --
 
 INSERT INTO `tbl_feedback` (`feedback_id`, `feedback_description`, `feedback_date`, `user_id`, `worker_id`, `landlord_id`) VALUES
-(2, 'good', '2024-03-13', NULL, NULL, 1);
+(2, 'good', '2024-03-13', NULL, NULL, 1),
+(3, 'good', '2024-04-13', 2, NULL, NULL),
+(4, 'good', '2024-04-13', NULL, 9, NULL),
+(5, 'good', '2024-04-13', NULL, 1, NULL),
+(6, 'good', '2024-04-13', 2, NULL, NULL),
+(7, 'good', '2024-04-13', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -162,7 +144,11 @@ CREATE TABLE `tbl_land` (
 --
 
 INSERT INTO `tbl_land` (`land_id`, `land_image`, `land_tokenamount`, `land_address`, `landlord_id`, `land_status`, `location_id`, `land_details`) VALUES
-(1, 'Land_1709.jpg', 5000, 'freeland parakadavu \r\n                        ', 1, 3, 1, ' 5 acre\r\n                        ');
+(1, 'Land_1709.jpg', 5000, 'freeland parakadavu \r\n                        ', 1, 3, 1, ' 5 acre\r\n                        '),
+(2, 'Land_1116.jpg', 1000, ' near suvarnagiri road\r\n                        ', 1, 0, 3, ' 3.5 acre\r\n                        '),
+(3, 'Land_1762.jpg', 3000, '  near st.joseph school  Azhikkal   road           ', 1, 0, 7, ' 2.5 acre\r\n                        '),
+(4, 'Land_1469.jpg', 5000, ' near nelliyampathy \r\n hills                       ', 1, 0, 5, ' 50  cent\r\n                        '),
+(5, 'Land_1871.jpg', 3000, ' farm land khordha                      ', 1, 3, 12, ' 4 acre\r\n                       ');
 
 -- --------------------------------------------------------
 
@@ -184,8 +170,13 @@ CREATE TABLE `tbl_landbooking` (
 --
 
 INSERT INTO `tbl_landbooking` (`landbooking_id`, `user_id`, `land_id`, `booking_date`, `booked_date`, `landbooking_pstatus`) VALUES
-(1, 1, 1, '2024-03-13', '2024-03-12', 3),
-(2, 1, 1, '2024-03-13', '2024-03-20', 3);
+(3, 1, 1, '2024-03-16', '2024-03-04', 3),
+(4, 1, 1, '2024-03-19', '2024-03-12', 3),
+(5, 1, 1, '2024-03-19', '2024-04-03', 3),
+(6, 2, 1, '2024-04-13', '2024-05-08', 3),
+(7, 2, 5, '2024-04-13', '2024-04-18', 3),
+(8, 2, 3, '2024-04-13', '2024-04-02', 3),
+(9, 2, 5, '2024-04-13', '2024-05-25', 3);
 
 -- --------------------------------------------------------
 
@@ -237,7 +228,15 @@ CREATE TABLE `tbl_latestwork` (
 --
 
 INSERT INTO `tbl_latestwork` (`lwork_id`, `lwork_image`, `lwork_amount`, `lwork_caption`, `lwork_details`, `worker_id`) VALUES
-(1, 'LatestWork_1216.jpg', 2000, 'VASTU TIPS', ' \r\n     Hanging crystals                   ', 1);
+(1, 'LatestWork_1216.jpg', 2000, 'VASTU TIPS', ' \r\n     Hanging crystals                   ', 1),
+(2, 'LatestWork_2045.jpg', 15000, 'architect design', ' 3000 sq.feet with swimming pool\r\n                        ', 2),
+(3, 'LatestWork_1293.jpg', 20000, 'construction ', ' construction design \r\n                        ', 3),
+(4, 'LatestWork_1638.jpg', 20000, 'design and build contractor', ' design and build contractor\r\n                        ', 4),
+(5, 'LatestWork_1427.jpg', 15000, 'interior design in singapore', ' interior space planning,\r\n                        ', 5),
+(6, 'LatestWork_1729.crdownload', 2000, 'Right -house painting', ' wallpaintaing           ', 6),
+(7, 'LatestWork_2030.jpg', 35000, 'emerency plumber', ' \r\n        plumber on call                ', 7),
+(8, 'LatestWork_1393.jpeg', 5000, 'electrician hourly works', ' electrician hourly works\r\n                        ', 8),
+(9, 'LatestWork_1248.jpg', 15000, 'furniture', ' fast maintance\r\n                        ', 9);
 
 -- --------------------------------------------------------
 
@@ -293,7 +292,15 @@ CREATE TABLE `tbl_lworkbooking` (
 --
 
 INSERT INTO `tbl_lworkbooking` (`lworkbooking_id`, `user_id`, `lwork_id`, `booking_date`, `booked_date`, `lworkbooking_pstatus`, `lworkbooking_cstatus`) VALUES
-(1, 1, 1, '2024-03-13', '2024-03-27', 1, 3);
+(1, 1, 1, '2024-03-13', '2024-03-27', 1, 3),
+(2, 1, 1, '2024-04-13', '2024-04-09', 0, 0),
+(3, 1, 1, '2024-04-13', '2024-04-17', 0, 1),
+(5, 2, 2, '2024-04-13', '2024-04-18', 0, 3),
+(6, 2, 2, '2024-04-13', '2024-04-19', 1, 3),
+(7, 2, 1, '2024-04-13', '2024-05-11', 1, 3),
+(8, 2, 1, '2024-04-13', '2024-05-11', 0, 0),
+(9, 2, 9, '2024-04-13', '2024-04-20', 1, 3),
+(10, 2, 1, '2024-04-13', '2024-04-25', 1, 3);
 
 -- --------------------------------------------------------
 
@@ -331,30 +338,6 @@ INSERT INTO `tbl_place` (`place_id`, `place_name`, `district_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_product`
---
-
-CREATE TABLE `tbl_product` (
-  `product_id` int(10) UNSIGNED NOT NULL,
-  `product_name` varchar(50) DEFAULT NULL,
-  `product_image` varchar(50) DEFAULT NULL,
-  `pcategory_id` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_productcategory`
---
-
-CREATE TABLE `tbl_productcategory` (
-  `pcategory_id` int(10) UNSIGNED NOT NULL,
-  `pcategory_name` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_review`
 --
 
@@ -364,8 +347,17 @@ CREATE TABLE `tbl_review` (
   `user_id` int(10) UNSIGNED DEFAULT NULL,
   `user_rating` int(10) UNSIGNED DEFAULT NULL,
   `user_review` varchar(150) DEFAULT NULL,
-  `worker_id` int(10) UNSIGNED DEFAULT NULL
+  `worker_id` int(10) UNSIGNED DEFAULT NULL,
+  `user_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_review`
+--
+
+INSERT INTO `tbl_review` (`review_id`, `review_datetime`, `user_id`, `user_rating`, `user_review`, `worker_id`, `user_name`) VALUES
+(1, '2024-04-13 14:20:58', NULL, 4, 'tiyg', 9, 'ytv'),
+(2, '2024-04-13 14:37:51', NULL, 4, 'si', 1, 'siyad');
 
 -- --------------------------------------------------------
 
@@ -386,7 +378,15 @@ CREATE TABLE `tbl_service` (
 --
 
 INSERT INTO `tbl_service` (`service_id`, `service_title`, `service_description`, `service_amount`, `worker_id`) VALUES
-(1, 'predict the future', ' predict the future of the house\r\n                        ', 1001, 1);
+(1, 'predict the future', ' predict the future of the house\r\n                        ', 1001, 1),
+(2, 'architect design', ' architect revies  drwawing based feeback owner\r\n                        ', 3000, 2),
+(3, 'Design and drawing services', ' Design and drawing services\r\n                        ', 2300, 3),
+(4, 'paperwork', ' design and build contractor\r\n                        ', 20000, 4),
+(5, 'formation and engineering implementation', ' formation and engineering implementation\r\n                  ', 20000, 5),
+(6, 'wallpaintaing', ' wallpaintaing             ', 2000, 6),
+(7, 'he whole system of piping', ' he whole system of piping\r\n                        ', 2000, 7),
+(8, 'Commercial electrician', ' Electrical installation,\r\nMaintenance Electrician\r\n                        ', 20000, 8),
+(9, 'Cabinet installation', ' Cabinet installation\r\n                        ', 1001, 9);
 
 -- --------------------------------------------------------
 
@@ -403,6 +403,15 @@ CREATE TABLE `tbl_servicebooking` (
   `servicebooking_astatus` int(10) UNSIGNED DEFAULT 0,
   `servicebooking_pstatus` int(10) UNSIGNED DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tbl_servicebooking`
+--
+
+INSERT INTO `tbl_servicebooking` (`servicebooking_id`, `user_id`, `service_id`, `booking_date`, `booked_date`, `servicebooking_astatus`, `servicebooking_pstatus`) VALUES
+(1, 1, 1, '2024-04-13', '2024-04-30', 0, 0),
+(2, 2, 1, '2024-04-13', '2024-05-08', 1, 0),
+(3, 2, 1, '2024-04-13', '2024-04-25', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -421,7 +430,14 @@ CREATE TABLE `tbl_servicegallery` (
 --
 
 INSERT INTO `tbl_servicegallery` (`sgallery_id`, `sgallery_image`, `service_id`) VALUES
-(1, 'Service_1085.avif', 1);
+(1, 'Service_1085.avif', 1),
+(2, 'Service_1755.jpg', 2),
+(3, 'Service_1418.jpg', 3),
+(4, 'Service_1056.jpg', 5),
+(5, 'Service_1868.crdownload', 6),
+(6, 'Service_1103.jpg', 7),
+(7, 'Service_1863.jpeg', 8),
+(8, 'Service_1872.jpg', 9);
 
 -- --------------------------------------------------------
 
@@ -461,62 +477,6 @@ INSERT INTO `tbl_servicetype` (`servicetype_id`, `servicetype_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_shop`
---
-
-CREATE TABLE `tbl_shop` (
-  `shop_id` int(10) UNSIGNED NOT NULL,
-  `shop_name` varchar(50) NOT NULL,
-  `shop_email` varchar(50) NOT NULL,
-  `shop_contact` varchar(50) DEFAULT NULL,
-  `shop_address` varchar(150) DEFAULT NULL,
-  `shop_logo` varchar(50) DEFAULT NULL,
-  `shop_proof` varchar(50) DEFAULT NULL,
-  `shop_password` varchar(50) DEFAULT NULL,
-  `shop_doj` date DEFAULT NULL,
-  `shop_vstatus` int(50) DEFAULT 0,
-  `place_id` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_shopproduct`
---
-
-CREATE TABLE `tbl_shopproduct` (
-  `sproduct_id` int(10) UNSIGNED NOT NULL,
-  `shop_id` int(10) UNSIGNED DEFAULT NULL,
-  `product_id` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_sproductgallery`
---
-
-CREATE TABLE `tbl_sproductgallery` (
-  `gallery_id` int(10) UNSIGNED NOT NULL,
-  `gallery_image` varchar(50) DEFAULT NULL,
-  `sproduct_id` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_sproductstock`
---
-
-CREATE TABLE `tbl_sproductstock` (
-  `sproductstock_id` int(10) UNSIGNED NOT NULL,
-  `sproduct_id` int(10) UNSIGNED DEFAULT NULL,
-  `sproduct_qty` int(10) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_user`
 --
 
@@ -539,7 +499,8 @@ CREATE TABLE `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_name`, `user_contact`, `user_email`, `user_gender`, `user_address`, `user_dob`, `user_doj`, `user_photo`, `user_password`, `location_id`) VALUES
-(1, ' MATHEW', '9605381309', 'mathew29@gmail.com', 'Male', 'kombanaparambil(h)vellayamkudy (po) kattappana\r\n                        \r\n                        \r\n                        ', '1993-06-08', '2024-03-13', 'User_1391.webp', 'mathew', 3);
+(1, ' MATHEW', '9605381309', 'mathew29@gmail.com', 'Male', 'kombanaparambil(h)vellayamkudy (po) kattappana\r\n                        \r\n                        \r\n                        ', '1993-06-08', '2024-03-13', 'User_1391.webp', 'mathew', 3),
+(2, 'siyad', '9778350198', 'siyad@gmail.com', 'Male', 'kombanaparambill H kattappana po vellayamkudy', '2003-10-25', '2024-04-13', 'User_2015.jpg', 'siyad', 3);
 
 -- --------------------------------------------------------
 
@@ -558,7 +519,8 @@ CREATE TABLE `tbl_wishlist` (
 --
 
 INSERT INTO `tbl_wishlist` (`wishlist_id`, `user_id`, `worker_id`) VALUES
-(1, 1, 1);
+(1, 1, 1),
+(2, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -578,7 +540,15 @@ CREATE TABLE `tbl_work` (
 --
 
 INSERT INTO `tbl_work` (`work_id`, `work_image`, `work_caption`, `worker_id`) VALUES
-(1, 'Work_1451.jpg', 'VASTU TIPS', 1);
+(1, 'Work_1451.jpg', 'VASTU TIPS', 1),
+(2, 'Work_1417.jpg', 'Architect design', 2),
+(3, 'Work_1639.webp', 'construction ', 3),
+(4, 'Work_1295.webp', 'Paperwork,worker align', 4),
+(5, 'Work_2051.jpg', 'interoir design singapore', 5),
+(6, 'Work_1426.jpg', 'home painting', 6),
+(7, 'Work_1425.jpg', 'first class plumbing', 7),
+(8, 'Work_1678.jpg', 'industrial  elecriction', 8),
+(9, 'Work_1053.avif', 'Cabinet installation', 9);
 
 -- --------------------------------------------------------
 
@@ -615,8 +585,8 @@ INSERT INTO `tbl_worker` (`worker_id`, `worker_name`, `worker_contact`, `worker_
 (5, 'Govind', '9495187733', 'Male', 'govind@gmail.com', 'Govinthapuram h fort kochi po kochi Ernakulam', '2002-02-11', 'Worker_1233.webp', 'WorkerProof_2058.webp', 1, 'govind', '2024-03-13', 5, 8),
 (6, 'Naveen', '9745859632', 'Male', 'naveen@gmail.com', 'Arackal H  Beypure road Kozhikkodu', '1999-10-31', 'Worker_1120.webp', 'WorkerProof_2009.webp', 1, 'naveen', '2024-03-13', 6, 10),
 (7, 'Abhijith', '9465124578', 'Male', 'abhijith@gmail.com', 'Shanthipuram colony H kappadu  fort Po Kappadu', '2005-02-08', 'Worker_1635.png', 'WorkerProof_1249.png', 1, 'abhijith', '2024-03-13', 7, 11),
-(8, 'Richard Martin', '9478514876', 'Male', 'richard@gmail.com', 'Vattathil H Edakkal cavu road Edakkal Wayanadu', '2006-01-31', 'Worker_2018.jpg', 'WorkerProof_1290.jpg', 0, 'richard', '2024-03-13', 8, 13),
-(9, 'Manaf ', '9495187733', 'Male', 'manaf@gmail.com', 'Padippurayil H Bekal kadu PO Kasargod', '2001-10-23', 'Worker_1063.jpg', 'WorkerProof_1383.jpg', 0, 'manaf', '2024-03-13', 9, 14);
+(8, 'Richard Martin', '9478514876', 'Male', 'richard@gmail.com', 'Vattathil H Edakkal cavu road Edakkal Wayanadu', '2006-01-31', 'Worker_2018.jpg', 'WorkerProof_1290.jpg', 1, 'richard', '2024-03-13', 8, 13),
+(9, 'Manaf ', '9495187733', 'Male', 'manaf@gmail.com', 'Padippurayil H Bekal kadu PO Kasargod', '2001-10-23', 'Worker_1063.jpg', 'WorkerProof_1383.jpg', 1, 'manaf', '2024-03-13', 9, 14);
 
 -- --------------------------------------------------------
 
@@ -657,6 +627,19 @@ CREATE TABLE `tbl_workgallery` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `tbl_workgallery`
+--
+
+INSERT INTO `tbl_workgallery` (`wgallery_id`, `wgallery_image`, `work_id`) VALUES
+(1, 'WorkGallery_1131.webp', 3),
+(2, 'WorkGallery_1061.webp', 4),
+(3, 'WorkGallery_1753.jpg', 5),
+(4, 'WorkGallery_1755.jpg', 6),
+(5, 'WorkGallery_1757.jpg', 7),
+(6, 'WorkGallery_1045.jpg', 8),
+(7, 'WorkGallery_1324.jpg', 9);
+
+--
 -- Indexes for dumped tables
 --
 
@@ -666,18 +649,6 @@ CREATE TABLE `tbl_workgallery` (
 ALTER TABLE `tbl_admin`
   ADD PRIMARY KEY (`admin_id`),
   ADD UNIQUE KEY `admin_id` (`admin_id`);
-
---
--- Indexes for table `tbl_cartbody`
---
-ALTER TABLE `tbl_cartbody`
-  ADD PRIMARY KEY (`cbody_id`);
-
---
--- Indexes for table `tbl_carthead`
---
-ALTER TABLE `tbl_carthead`
-  ADD PRIMARY KEY (`cart_id`);
 
 --
 -- Indexes for table `tbl_complaints`
@@ -750,18 +721,6 @@ ALTER TABLE `tbl_place`
   ADD UNIQUE KEY `place_id` (`place_id`);
 
 --
--- Indexes for table `tbl_product`
---
-ALTER TABLE `tbl_product`
-  ADD PRIMARY KEY (`product_id`);
-
---
--- Indexes for table `tbl_productcategory`
---
-ALTER TABLE `tbl_productcategory`
-  ADD PRIMARY KEY (`pcategory_id`);
-
---
 -- Indexes for table `tbl_review`
 --
 ALTER TABLE `tbl_review`
@@ -795,31 +754,6 @@ ALTER TABLE `tbl_servicegallery`
 ALTER TABLE `tbl_servicetype`
   ADD PRIMARY KEY (`servicetype_id`),
   ADD UNIQUE KEY `servicetype_id` (`servicetype_id`);
-
---
--- Indexes for table `tbl_shop`
---
-ALTER TABLE `tbl_shop`
-  ADD PRIMARY KEY (`shop_id`),
-  ADD UNIQUE KEY `shop_id` (`shop_id`);
-
---
--- Indexes for table `tbl_shopproduct`
---
-ALTER TABLE `tbl_shopproduct`
-  ADD PRIMARY KEY (`sproduct_id`);
-
---
--- Indexes for table `tbl_sproductgallery`
---
-ALTER TABLE `tbl_sproductgallery`
-  ADD PRIMARY KEY (`gallery_id`);
-
---
--- Indexes for table `tbl_sproductstock`
---
-ALTER TABLE `tbl_sproductstock`
-  ADD PRIMARY KEY (`sproductstock_id`);
 
 --
 -- Indexes for table `tbl_user`
@@ -874,22 +808,10 @@ ALTER TABLE `tbl_admin`
   MODIFY `admin_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tbl_cartbody`
---
-ALTER TABLE `tbl_cartbody`
-  MODIFY `cbody_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_carthead`
---
-ALTER TABLE `tbl_carthead`
-  MODIFY `cart_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `tbl_complaints`
 --
 ALTER TABLE `tbl_complaints`
-  MODIFY `complaint_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `complaint_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_district`
@@ -901,19 +823,19 @@ ALTER TABLE `tbl_district`
 -- AUTO_INCREMENT for table `tbl_feedback`
 --
 ALTER TABLE `tbl_feedback`
-  MODIFY `feedback_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `feedback_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tbl_land`
 --
 ALTER TABLE `tbl_land`
-  MODIFY `land_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `land_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tbl_landbooking`
 --
 ALTER TABLE `tbl_landbooking`
-  MODIFY `landbooking_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `landbooking_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_landlord`
@@ -925,7 +847,7 @@ ALTER TABLE `tbl_landlord`
 -- AUTO_INCREMENT for table `tbl_latestwork`
 --
 ALTER TABLE `tbl_latestwork`
-  MODIFY `lwork_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `lwork_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_location`
@@ -937,7 +859,7 @@ ALTER TABLE `tbl_location`
 -- AUTO_INCREMENT for table `tbl_lworkbooking`
 --
 ALTER TABLE `tbl_lworkbooking`
-  MODIFY `lworkbooking_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `lworkbooking_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_place`
@@ -946,40 +868,28 @@ ALTER TABLE `tbl_place`
   MODIFY `place_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `tbl_product`
---
-ALTER TABLE `tbl_product`
-  MODIFY `product_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_productcategory`
---
-ALTER TABLE `tbl_productcategory`
-  MODIFY `pcategory_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `tbl_review`
 --
 ALTER TABLE `tbl_review`
-  MODIFY `review_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `review_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_service`
 --
 ALTER TABLE `tbl_service`
-  MODIFY `service_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `service_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_servicebooking`
 --
 ALTER TABLE `tbl_servicebooking`
-  MODIFY `servicebooking_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `servicebooking_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_servicegallery`
 --
 ALTER TABLE `tbl_servicegallery`
-  MODIFY `sgallery_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `sgallery_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_servicetype`
@@ -988,46 +898,22 @@ ALTER TABLE `tbl_servicetype`
   MODIFY `servicetype_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT for table `tbl_shop`
---
-ALTER TABLE `tbl_shop`
-  MODIFY `shop_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_shopproduct`
---
-ALTER TABLE `tbl_shopproduct`
-  MODIFY `sproduct_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_sproductgallery`
---
-ALTER TABLE `tbl_sproductgallery`
-  MODIFY `gallery_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tbl_sproductstock`
---
-ALTER TABLE `tbl_sproductstock`
-  MODIFY `sproductstock_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_wishlist`
 --
 ALTER TABLE `tbl_wishlist`
-  MODIFY `wishlist_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `wishlist_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_work`
 --
 ALTER TABLE `tbl_work`
-  MODIFY `work_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `work_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_worker`
@@ -1045,7 +931,7 @@ ALTER TABLE `tbl_workertype`
 -- AUTO_INCREMENT for table `tbl_workgallery`
 --
 ALTER TABLE `tbl_workgallery`
-  MODIFY `wgallery_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `wgallery_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -137,7 +137,7 @@
                         %>
                         <tr>
                             <td><%=i%></td>
-                            <td><img src="../Assets/LatestWork/<%=rs.getString("lwork_image")%>" width="100" height="100"></td>
+                            <td><img src="../Assets/Files/<%=rs.getString("lwork_image")%>" width="100" height="100"></td>
                             <td><%=rs.getString("lwork_amount")%></td>
                              <td><%=rs.getString("user_name")%></td>
                               <td><%=rs.getString("user_contact")%></td>
@@ -198,7 +198,7 @@
                         %>
                         <tr>
                             <td><%=i%></td>
-                            <td><img src="../Assets/LatestWork/<%=rs.getString("lwork_image")%>" width="100" height="100"></td>
+                            <td><img src="../Assets/Files/<%=rs.getString("lwork_image")%>" width="100" height="100"></td>
                             <td><%=rs.getString("lwork_amount")%></td>
                              <td><%=rs.getString("user_name")%></td>
                               <td><%=rs.getString("user_contact")%></td>
